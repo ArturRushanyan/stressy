@@ -16,7 +16,7 @@ A comprehensive HTTP stress testing library for Node.js applications. Perform lo
 ## Installation
 
 ```bash
-npm install node-stress-tester
+npm install stressy
 ```
 
 ## Quick Start
@@ -24,7 +24,7 @@ npm install node-stress-tester
 ### Programmatic Usage
 
 ```javascript
-import StressTester from "node-stress-tester";
+import StressTester from "stressy";
 
 const tester = new StressTester();
 
@@ -62,18 +62,18 @@ await tester.runStressTest({
 
 ```bash
 # Basic usage
-npx node-stress-tester --url "https://api.example.com/users" --rps 100 --requests 1000
+npx stressy --url "https://api.example.com/users" --rps 100 --requests 1000
 
 # With custom headers and body
-npx node-stress-tester --url "https://api.example.com/users" --rps 50 --requests 500 \
+npx stressy --url "https://api.example.com/users" --rps 50 --requests 500 \
   --method POST --headers '{"Authorization": "Bearer token"}' \
   --body '{"name": "Test User"}'
 
 # Duration-based test
-npx node-stress-tester --url "https://api.example.com/users" --rps 200 --duration 60
+npx stressy --url "https://api.example.com/users" --rps 200 --duration 60
 
 # Silent mode (no terminal output)
-npx node-stress-tester --url "https://api.example.com/users" --rps 100 --requests 1000 --silent
+npx stressy --url "https://api.example.com/users" --rps 100 --requests 1000 --silent
 ```
 
 ## API Reference
@@ -164,7 +164,7 @@ Provides colored terminal output with progress bars.
 Outputs structured JSON data for programmatic consumption.
 
 ```javascript
-import { JSONReporter } from "node-stress-tester";
+import { JSONReporter } from "stressy";
 
 const tester = new StressTester({
   reporter: new JSONReporter(),
@@ -194,12 +194,6 @@ npm test
 
 # Run tests with coverage
 npm run test:coverage
-
-# Run tests in watch mode
-npm test
-
-# Run tests with UI
-npm run test:ui
 ```
 
 ### Test Coverage
@@ -213,20 +207,9 @@ The test suite covers:
 - ✅ **Statistics** - Statistical calculations
 - ✅ **CLI** - Command-line interface functionality
 
-Current coverage targets:
-
-- Branches: 80%
-- Functions: 80%
-- Lines: 80%
-- Statements: 80%
-
 ## Requirements
 
 - Node.js >= 16.0.0
-
-## License
-
-MIT
 
 ## Contributing
 
@@ -236,8 +219,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ```bash
 # Clone the repository
-git clone https://github.com/ArthurRushanyan/node-stress-tester.git
-cd node-stress-tester
+git clone https://github.com/ArturRushanyan/stressy.git
+cd stressy
 
 # Install dependencies
 npm install
