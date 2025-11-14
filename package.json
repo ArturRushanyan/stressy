@@ -1,6 +1,6 @@
 {
-  "name": "node-stress-tester",
-  "version": "1.0.0",
+  "name": "",
+  "version": "0.1.0",
   "description": "A comprehensive HTTP stress testing library for Node.js",
   "main": "src/index.js",
   "type": "module",
@@ -18,7 +18,8 @@
     "http",
     "testing",
     "benchmark",
-    "nodejs"
+    "nodejs",
+    "stressy"
   ],
   "author": "ArthurRushanyan",
   "license": "MIT",
