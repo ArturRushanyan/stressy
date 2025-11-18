@@ -310,15 +310,14 @@ export class StressTester extends EventEmitter {
         this.state.failedRequests++;
       }
 
-      this.state.totalResponseTime += responseTime;
+      this.state.totalResponseTime += requestDuration;
       this.emit("requestComplete", result);
     } catch (error) {
-      this.emit("erorDuringRequest", error);
       const requestDuration = Number(
         (performance.now() - requestStartTime).toFixed(2)
       );
       this.state.failedRequests++;
-      this.state.totalResponseTime += responseTime;
+      this.state.totalResponseTime += requestDuration;
 
       this.state.responseTimes.push(requestDuration);
 
@@ -338,6 +337,11 @@ export class StressTester extends EventEmitter {
   }
 
   #buildURL(config) {
+    console.log(
+      "1 ==============",
+      `${config.baseURL}${config.endpoint || ""}`
+    );
+    console.log("2 ==============", config.url);
     if (config.url) return config.url;
     return `${config.baseURL}${config.endpoint || ""}`;
   }
