@@ -37,34 +37,29 @@ import { StressTester, JSONReporter } from "../src/index.js";
 async function runExamples() {
   const tester = new StressTester();
 
-  // console.log("=== Basic Stress Test ===");
-  // await tester.runStressTest({
-  //   url: "http://jsonplaceholder.typicode.com/get",
-  //   method: "GET",
-  //   totalRequests: 1,
-  //   requestsPerSecond: 1,
-  // });
+  console.log("=== Basic Stress Test ===");
+  await tester.runStressTest({
+    url: "http://jsonplaceholder.typicode.com/get",
+    method: "GET",
+    totalRequests: 1,
+    requestsPerSecond: 1,
+  });
 
-  // console.log("\n=== Test with Dynamic Data ===");
-  // await tester.runStressTest({
-  //   url: "https://jsonplaceholder.typicode.com/posts",
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: {
-  //     title: "Test Post {id}",
-  //     body: "This is test content for request {id}",
-  //     userId: "{randomNumber:100}",
-  //   },
-  //   dynamicData: true,
-  //   totalRequests: 1,
-  //   requestsPerSecond: 1,
-  // });
-
-  let a = 0;
-  tester.on("erorDuringRequest", (data) => {
-    a++;
+  console.log("\n=== Test with Dynamic Data ===");
+  await tester.runStressTest({
+    url: "https://jsonplaceholder.typicode.com/posts",
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: {
+      title: "Test Post {id}",
+      body: "This is test content for request {id}",
+      userId: "{randomNumber:100}",
+    },
+    dynamicData: true,
+    totalRequests: 1,
+    requestsPerSecond: 1,
   });
 
   console.log("\n=== Silent Mode Test ===");
@@ -79,8 +74,6 @@ async function runExamples() {
   const statistics = tester.getStatistics();
 
   console.log("Statistics: ", statistics);
-
-  console.log("countOferrors  ==========", a);
 }
 
 runExamples().catch(console.error);

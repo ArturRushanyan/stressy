@@ -337,11 +337,6 @@ export class StressTester extends EventEmitter {
   }
 
   #buildURL(config) {
-    console.log(
-      "1 ==============",
-      `${config.baseURL}${config.endpoint || ""}`
-    );
-    console.log("2 ==============", config.url);
     if (config.url) return config.url;
     return `${config.baseURL}${config.endpoint || ""}`;
   }
