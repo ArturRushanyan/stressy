@@ -1,6 +1,6 @@
 {
   "name": "stressy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A comprehensive HTTP stress testing library for Node.js",
   "main": "src/index.js",
   "type": "module",
