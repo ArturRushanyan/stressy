@@ -25,11 +25,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ArthurRushanyan/stressy.git"
+    "url": "https://github.com/ArturRushanyan/stressy.git"
   },
-  "homepage": "https://github.com/ArthurRushanyan/stressy#readme",
+  "homepage": "https://github.com/ArturRushanyan/stressy#readme",
   "bugs": {
-    "url": "https://github.com/ArthurRushanyan/stressy/issues"
+    "url": "https://github.com/ArturRushanyan/stressy/issues"
   },
   "files": [
     "src/",
